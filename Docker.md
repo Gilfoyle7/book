@@ -1,8 +1,8 @@
-##Docker容器卷
+## Docker容器卷
 
 docker 为我们提供了三种不同的方式将数据挂载到容器中：volume、bind mount、`tmpfs`。
 
-###volume方式
+### volume方式
 
 volume 方式是 docker 中数据持久化的最佳方式。
 
@@ -16,7 +16,7 @@ volume 方式是 docker 中数据持久化的最佳方式。
 >$ docker rm -v <container_id>
 >$ docker volume rm <volume_name>
 
-####相关用例
+#### 相关用例
 
 volume 方式应该是持久化数据的首选方式， 其推荐用例：
 
@@ -30,4 +30,4 @@ volume 方式应该是持久化数据的首选方式， 其推荐用例：
 
 > 新用户应该尝试--mount语法，它比--volume语法更简单。
 
-####-v和-mount
+#### -v和-mount
