@@ -7,10 +7,7 @@ UNIX大多数文件I/O只要五个函数：*open、read、write、lseek和close*
 ### open和openat
 
 ```c
-#include <fcntl.h>
-
 int open(const char *path, int oflag, ...);
-
 int openat(int fd, const char *path, int oflag, ...);
 ```
 
@@ -43,4 +40,18 @@ int openat(int fd, const char *path, int oflag, ...);
    ```
 
 openat函数希望解决两个问题，第一个是让线程可以使用相对路径名打开目录中的文件，而不再只能打开当前工作目录。第二个是可以避免***TOCTTOU***错误。
+
+### creat和close
+
+```c
+int creat(const char *path, mode_t mode);
+//open(path, O_WRONLY | O_CREAT | O_TRUNC, mode);
+int close(int fd);
+```
+
+creat的不足是它以只写方式打开所创建的文件。close函数关闭一个打开文件，关闭文件时会释放该进程加在该文件上的所有记录锁。当一个进程终止时，内核自动关闭它所有的打开文件。
+
+
+
+
 
