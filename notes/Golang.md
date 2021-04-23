@@ -18,7 +18,23 @@
     
   + channel
 
-+ 面试题
++ 标准库
+
+  + sync.Pool
+
+    + 对于很多需要重复分配和回收内存的地方，sync.Pool是一个很好的选择。频繁地分配和回收内存会给GC带来一定的负担，严重的时候会引起CPU的毛刺，而sync,Pool可以将暂时不用的对象缓存起来，待下次需要的时候直接使用，减少GC的压力，提升系统的性能。
+    + 协程安全
+
+  + unsafe.Pointer
+
+    + 任何类型的指针值都可以转换为Pointer
+    + Pointer可以转换为任何类型的指针值
+    + uintptr可以转换为Pointer
+    + Pointer可以转换为uintptr
+
+    总结：(1)unsafe.Pointer可以让你的变量在不同的指针类型转换，类似C语言的void* (2)uintptr常用于和unsafe.Pointer做配合，用于指针运算
+
++ Q&A
 
   1. Q: nil的Slice和空的Slice一样吗？
 
