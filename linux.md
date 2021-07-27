@@ -9,3 +9,7 @@ grep 5ee2a633-b28a-4798-7b08-b1542ec16e96 kube-odin.ddcloud-kube-master00-v3.xia
 
 
 [yum更换源](https://blog.csdn.net/wudinaniya/article/details/105758739)
+
+
+
+fgrep "2021-07-27 16:40" info-2021-07-27.* | fgrep "merge alert, groupId=" | cut -d "." -f3 | uniq -c
